@@ -76,7 +76,7 @@ window.addEventListener('keydown', function(event){
 function showSoundIsPlayingOn(soundElement) {
   soundElement.classList.add('playing');
   soundElement.addEventListener('transitionend', function(event) {
-    if (event.propertyName == 'transform') { return; }
+    if (event.propertyName != 'transform') { return; }
     event.currentTarget.classList.remove('playing');
   });
 }
